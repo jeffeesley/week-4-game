@@ -9,19 +9,26 @@ $(document).ready(function(){
 		var grey = Math.floor((Math.random() * 12) + 1);
 		var orange = Math.floor((Math.random() * 12) + 1);
 		var userTotal = 0;
+		var wins = 0;
+		var losses = 0;
 		console.log(answer);
-
+		$("#win").html(wins);
+		$("#lose").html(losses);
 		$("#target").html(answer);
 		$(".green-crystal").on("click", function(){
 			console.log(green);
 			userTotal = userTotal + green;
 			$("#total").html(userTotal);
 			if(userTotal > answer){
+				losses++;
 				reset();
+				
 				alert("You lose");
 				
 			}if(userTotal == answer){
+				wins++;
 				reset();
+				
 				alert("You win");
 				
 			}
@@ -31,11 +38,15 @@ $(document).ready(function(){
 			userTotal = userTotal + blue;
 			$("#total").html(userTotal);
 			if(userTotal > answer){
+				losses++;
 				reset();
+				
 				alert("You lose ");
 				
 			}if(userTotal == answer){
+				wins++;
 				reset();
+				
 				alert("You win");
 				
 			}
@@ -45,11 +56,15 @@ $(document).ready(function(){
 			userTotal = userTotal + grey;
 			$("#total").html(userTotal);
 			if(userTotal > answer){
+				losses++;
 				reset();
+				
 				alert("You lose");
 				
 			}if(userTotal == answer){
+				wins++;
 				reset();
+				
 				alert("You win");
 				
 			}
@@ -59,11 +74,15 @@ $(document).ready(function(){
 			userTotal = userTotal + orange;
 			$("#total").html(userTotal);
 			if(userTotal > answer){
+				losses++;
 				reset();
+				
 				alert("You lose");
 				
 			}if(userTotal == answer){
+				wins++;
 				reset();
+				
 				alert("You win");
 				
 			}
@@ -78,6 +97,8 @@ $(document).ready(function(){
 		
 		$("#target").html(answer);
 		$("#total").html(userTotal);
+		$("#win").html(wins);
+		$("#lose").html(losses);
 		}
 
 	})
